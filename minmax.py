@@ -1,17 +1,28 @@
+arr = [10,3,45,6,8,23,42,56,30]
 
-n = int(input("Enter the value of n:"))
+smin = smax = arr[0]
+min = max = arr[0]
 
-arr = []
+for num in arr:
+    # Maximum
+    if num > max:
+        smax = max
+        max = num
+    elif num > smax and num != max:
+        smax = num
 
-for i in range(n):
-    num = int(input("Enter the array elements:"))
-    arr.append(num)
+    # Minimum
+    if num < min:
+        smin = min
+        min = num
+    elif num < smin and num != min:
+        smin = num
 
-arr.sort()
+print("Smallest:", min)
+print("Second smallest:", smin)
+print("Maximum:", max)
+print("Second max:", smax)
 
-print("Smallest=",arr[0])
-print("Second smallest = ",arr[1])
-print("Largest = ",arr[n-1])
-print("Second largest = ",arr[n-2])
+
 
 
